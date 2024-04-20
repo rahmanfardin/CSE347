@@ -26,26 +26,23 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
-    <?php require 'includes/nav.inc.php' ?>
+    
     <header>
       <div class="container">
         <nav class="flex items-center">
           <div class="left flex items-center">
             <div class="logo-picture">
+            <a href="index.php">
               <img
               src="Main Logo.png"
                 alt="Fardin Rahman's Profile Picture"
                 height="100"
                 width="150"
               />
+              </a>
             </div>
 
-            <a href="index.php">Home</a>
-            <a href="skill.php">Skill</a>
-            <a href="interest.php">Interest</a>
-            <a href="education.php">Education</a>
-            <a href="project.php">Project</a>
-            <a href="contact.php">Contact</a>
+            <?php require 'includes/nav.inc.php' ?>
           </div>
         </nav>
         <div class="hero-1 flex items-center">

@@ -4,33 +4,24 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 } else {
   $loggedin = false;
 }
-echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="/lab4"><img href = "../../dashboard/util"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>';
-
-if (!$loggedin) {
-  echo '<li class="nav-item">
-        <a class="nav-link" href="loggin.php">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="signup.php">Signup</a>
-      </li>';
-}
-if ($loggedin) {
-  echo '<li class="nav-item">
-        <a class="nav-link" href="logout.php">Logout</a>
-      </li>';
-}
 
 
-echo '</ul>
-  </div>
-</nav>';
+
+      if(!$loggedin){
+        echo '<a href = "loggin.php">login</a>
+              <a href="signup.php"> signup</a>
+              ';
+      }
+      if ($loggedin) {
+        echo '<a href="index.php">Home</a>
+      <a href="skill.php">Skill</a>
+      <a href="interest.php">Interest</a>
+      <a href="education.php">Education</a>
+      <a href="project.php">Project</a>
+      <a href="contact.php">Contact</a>';
+      echo '<a href="logout.php">Logout</a>';
+      }
+
+
+
+?>

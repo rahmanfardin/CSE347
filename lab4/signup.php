@@ -21,9 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $showAlert = true;
         }
     } else {
-        if($usernameEsistsCheck) $showError = $showError . "| username exists |";
-        if($emailExistsCheck) $showError = $showError ."| email exists |";
-        if(!$passwordMatched) $showError = $showError ."| passwords dont match |";
+        if ($usernameEsistsCheck)
+            $showError = $showError . "| username exists |";
+        if ($emailExistsCheck)
+            $showError = $showError . "| email exists |";
+        if (!$passwordMatched)
+            $showError = $showError . "| passwords dont match |";
     }
 }
 
@@ -40,62 +43,95 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
 
     <title>SignUp</title>
 </head>
 
 <body>
-    <?php require 'includes/nav.inc.php' ?>
-    <?php
-    if ($showAlert) {
-        echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <header>
+        <div class="container">
+            <nav class="flex items-center">
+                <div class="left flex items-center">
+                    <div class="logo-picture">
+                    <a href="index.php">
+              <img
+              src="Main Logo.png"
+                alt="Fardin Rahman's Profile Picture"
+                height="100"
+                width="150"
+              />
+              </a>
+                    </div>
+                    <?php require 'includes/nav.inc.php' ?>
+
+                </div>
+            </nav>
+            <div>
+                <?php
+                if ($showAlert) {
+                    echo ' <div class="alert alert-success alert-dismissible fade show" role="alert">
         <strong>Success!</strong> Your account is now created and you can login
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
     </div> ';
-    }
-    if ($showError) {
-        echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                }
+                if ($showError) {
+                    echo ' <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <strong>Error!</strong> ' . $showError . '
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">×</span>
         </button>
     </div> ';
-    }
-    ?>
+                }
+                ?>
 
-    <div class="container my-4">
-        <h1 class="text-center">Signup to our website</h1>
-        <form action="signup.php" method="post">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <div class="container my-4">
+                    <h1 class="text-center" style="color:white;">Signup to our website</h1>
+                    <form action="signup.php" method="post">
+                        <div class="form-group">
+                            <label for="name" style="color:white;">Name</label>
+                            <input type="text" class="form-control" id="name" name="name">
 
-            </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" style="color:white;">Email</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                aria-describedby="emailHelp">
 
-            </div>
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="username" style="color:white;">Username</label>
+                            <input type="text" class="form-control" id="username" name="username">
 
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
-            </div>
-            <div class="form-group">
-                <label for="cpassword">Confirm Password</label>
-                <input type="password" class="form-control" id="cpassword" name="cpassword">
-                <small id="emailHelp" class="form-text text-muted">Make sure to type the same password</small>
-            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" style="color:white;">Password</label>
+                            <input type="password" class="form-control" id="password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="cpassword" style="color:white;">Confirm Password</label>
+                            <input type="password" class="form-control" id="cpassword" name="cpassword">
+                            <small id="emailHelp" class="form-text text-muted">Make sure to type the same
+                                password</small>
+                        </div>
 
-            <button type="submit" class="btn btn-primary">SignUp</button>
-        </form>
-    </div>
+                        <button type="submit" class="btn btn-primary">SignUp</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
