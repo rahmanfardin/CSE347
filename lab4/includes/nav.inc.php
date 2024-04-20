@@ -18,8 +18,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
       <a href="interest.php">Interest</a>
       <a href="education.php">Education</a>
       <a href="project.php">Project</a>
-      <a href="contact.php">Contact</a>';
-      echo '<a href="logout.php">Logout</a>';
+      <a href="contact.php">Contact</a>
+      <a href = "showtodo.php">To-Do</a>';
+      echo '<a href="logout.php" color = "red">Logout</a>';
       }
 
 
