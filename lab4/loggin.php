@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <label for="username" style="color:white;">Username</label>
                         <input type="text" class="form-control" id="username" name="username"
-                            aria-describedby="emailHelp" placeholder="username">
+                            aria-describedby="emailHelp" >
 
 
 
